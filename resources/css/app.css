@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme inline {
+    --font-sans:
+        Instrument Sans, ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+}
+
+html {
+    min-width: 320px;
+    background: #f5f7f8;
+}
+
+body {
+    margin: 0;
+    background: #f5f7f8;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+.desk-shell {
+    background:
+        radial-gradient(
+            ellipse at 92% 4%,
+            rgb(222 236 232 / 38%),
+            transparent 34rem
+        ),
+        #f5f7f8;
+}
+
+.metric-card {
+    min-height: 112px;
+    border: 1px solid #e2e8ee;
+    border-radius: 14px;
+    background: rgb(255 255 255 / 92%);
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgb(15 23 42 / 3.5%);
+}
+
+.metric-label {
+    color: #85909d;
+    font-size: 10px;
+    font-weight: 650;
+    letter-spacing: 0.085em;
+}
+
+.metric-icon {
+    display: flex;
+    width: 29px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+}
+
+.conversation-panel {
+    max-height: min(54vh, 570px);
+    min-height: 310px;
+    overflow-y: auto;
+    background:
+        radial-gradient(
+            circle at 15px 15px,
+            rgb(148 163 184 / 11%) 1px,
+            transparent 1.3px
+        ),
+        #f8fafb;
+    background-size: 24px 24px;
+    scroll-behavior: smooth;
+}
+
+.message-bubble {
+    border-radius: 14px;
+    padding: 12px 14px;
+}
+
+.assistant-bubble {
+    border: 1px solid #e3e9ed;
+    border-top-left-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgb(15 23 42 / 2%);
+}
+
+.customer-bubble {
+    border-top-right-radius: 5px;
+    background: #263f4b;
+    box-shadow: 0 2px 5px rgb(15 23 42 / 8%);
+}
+
+.handoff-bubble {
+    border: 1px solid #f2dfb5;
+    border-top-left-radius: 5px;
+    background: #fffcf5;
+    box-shadow: 0 2px 5px rgb(15 23 42 / 2%);
+}
+
+.suggestion-chip {
+    border: 1px solid #dce4e8;
+    border-radius: 999px;
+    background: white;
+    padding: 6px 10px;
+    color: #52616b;
+    font-size: 10px;
+    font-weight: 550;
+    transition:
+        background-color 150ms ease,
+        border-color 150ms ease,
+        color 150ms ease;
+}
+
+.suggestion-chip:hover {
+    border-color: #a9c2bc;
+    background: #f1f7f5;
+    color: #315d54;
+}
+
+.flow-step {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    padding-bottom: 19px;
+}
+
+.flow-step::before {
+    position: absolute;
+    top: 29px;
+    bottom: 0;
+    left: 13px;
+    border-left: 1px dashed #d6e0e3;
+    content: '';
+}
+
+.flow-number {
+    z-index: 1;
+    display: flex;
+    width: 27px;
+    height: 27px;
+    flex: 0 0 27px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dce6e4;
+    border-radius: 9px;
+    background: #f7faf9;
+    color: #397267;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    animation: typing 1s infinite ease-in-out;
+    border-radius: 50%;
+    background: #82928e;
+}
+
+.delay-100 {
+    animation-delay: 120ms;
+}
+
+.delay-200 {
+    animation-delay: 240ms;
+}
+
+@keyframes typing {
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.45;
+    }
+
+    30% {
+        transform: translateY(-3px);
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
